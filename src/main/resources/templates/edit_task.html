@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+</head>
+<body>
+<h1>Edit Task</h1>
+<form action="/save" method="post" th:object="${task}">
+    Title: <input type="text" th:field="*{title}" /><br/>
+    Description: <input type="text" th:field="*{description}" /><br/>
+    Due Date: <input type="date" th:field="*{dueDate}" /><br/>
+    Priority:
+    <select th:field="*{priority}">
+        <option value="LOW">LOW</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="HIGH">HIGH</option>
+    </select><br/>
+    Completed: <input type="checkbox" th:field="*{completed}" /><br/>
+    <button type="submit">Save</button>
+</form>
+<a href="/">Back to Task List</a>
+</body>
+</html>
